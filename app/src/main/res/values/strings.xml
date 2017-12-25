@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Ploub Soundbox</string>
+    <string name="welcomeMessage">Welcome to the Ploub Soundbox</string>
+    <string name="startMessage">START</string>
+    <string name="enterYourName">Enter your name</string>
+</resources>
