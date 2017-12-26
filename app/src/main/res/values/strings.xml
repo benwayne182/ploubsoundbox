@@ -3,4 +3,5 @@
     <string name="welcomeMessage">Welcome to the Ploub Soundbox</string>
     <string name="startMessage">START</string>
     <string name="enterYourName">Enter your name</string>
+    <string name="makeAChoice">Choisissez votre meilleure punchline de Ploub</string>
 </resources>

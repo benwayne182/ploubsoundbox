@@ -1,5 +1,6 @@
 package com.fdp.benwayne.ploubsoundbox;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            startSoundbox(v);
+            startSoundbox();
         }
     };
 
@@ -73,7 +74,8 @@ public class MainActivity extends AppCompatActivity {
         this.startButton.setOnClickListener(this.onClickListener);
     }
 
-    protected void startSoundbox(View view) {
-
+    private void startSoundbox() {
+        Intent gameActivity = new Intent(MainActivity.this, SoundPanelActivity.class);
+        startActivity(gameActivity);
     }
 }
