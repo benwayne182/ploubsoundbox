@@ -65,12 +65,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.textView = this.findViewById(R.id.activityMainTextView);
-        this.editText = this.findViewById(R.id.activityMainEditText);
+//        this.editText = this.findViewById(R.id.activityMainEditText);
         this.startButton = this.findViewById(R.id.activityMainStartButton);
 
-        this.startButton.setEnabled(false);
+        this.startButton.setEnabled(true);
 
-        this.editText.addTextChangedListener(this.textWatcher);
+//        this.editText.addTextChangedListener(this.textWatcher);
         this.startButton.setOnClickListener(this.onClickListener);
     }
 
