@@ -4,4 +4,13 @@
     <string name="startMessage">START</string>
     <string name="enterYourName">Enter your name</string>
     <string name="makeAChoice">Choisissez votre meilleure punchline de Ploub</string>
+    <string name="allez">Allez</string>
+    <string name="ca_petille">Ca pétille</string>
+    <string name="du_sale">Du sale</string>
+    <string name="la_vie_c_est_compliqu">La vie c\'est compliqué</string>
+    <string name="ok_c_est_parti">OK c\'est parti</string>
+    <string name="oktamer">oktamer</string>
+    <string name="pilon">pilon</string>
+    <string name="tg">TG</string>
+    <string name="zbob">ZBOB</string>
 </resources>
