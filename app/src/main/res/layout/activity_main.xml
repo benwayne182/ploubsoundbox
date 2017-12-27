@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.fdp.benwayne.ploubsoundbox.MainActivity">
+    tools:context="com.fdp.benwayne.ploubsoundbox.view.MainActivity">
 
     <TextView
         android:id="@+id/activityMainTextView"
@@ -17,15 +17,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.40" />
 
-    <!--<EditText-->
-        <!--android:id="@+id/activityMainEditText"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:hint="@string/enterYourName"-->
-        <!--app:layout_constraintBottom_toTopOf="@+id/activityMainStartButton"-->
-        <!--app:layout_constraintLeft_toLeftOf="parent"-->
-        <!--app:layout_constraintRight_toRightOf="parent"-->
-        <!--app:layout_constraintTop_toBottomOf="@+id/activityMainTextView" />-->
+    <EditText
+        android:id="@+id/activityMainEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/enterYourName"
+        app:layout_constraintBottom_toTopOf="@+id/activityMainStartButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activityMainTextView" />
 
     <Button
         android:id="@+id/activityMainStartButton"

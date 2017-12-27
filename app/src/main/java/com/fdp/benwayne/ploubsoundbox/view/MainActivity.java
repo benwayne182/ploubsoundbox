@@ -1,4 +1,4 @@
-package com.fdp.benwayne.ploubsoundbox;
+package com.fdp.benwayne.ploubsoundbox.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.fdp.benwayne.ploubsoundbox.R;
+import com.fdp.benwayne.ploubsoundbox.model.User;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Nom de l'utilisateur
      */
-    private String userName;
+    private User user;
     /**
      * Listener sur la modification du champs de saisie
      */
@@ -42,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
         public void onTextChanged(CharSequence s, int start, int before, int count) {
             boolean b = (s.length() != 0);
             startButton.setEnabled(b);
-            userName = b ? s.toString() : "";
+            String userName = b ? s.toString() : "";
+            user.setName(userName);
         }
 
         @Override
@@ -64,13 +68,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        user = new User();
         this.textView = this.findViewById(R.id.activityMainTextView);
-//        this.editText = this.findViewById(R.id.activityMainEditText);
+        this.editText = this.findViewById(R.id.activityMainEditText);
         this.startButton = this.findViewById(R.id.activityMainStartButton);
 
         this.startButton.setEnabled(true);
 
-//        this.editText.addTextChangedListener(this.textWatcher);
+        this.editText.addTextChangedListener(this.textWatcher);
         this.startButton.setOnClickListener(this.onClickListener);
     }
 
