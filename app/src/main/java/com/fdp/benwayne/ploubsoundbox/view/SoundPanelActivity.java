@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.fdp.benwayne.ploubsoundbox.R;
 
@@ -25,6 +26,23 @@ public class SoundPanelActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sound_panel);
+        Toast.makeText(this, this.getText(R.string.toast), Toast.LENGTH_SHORT).show();
+        this.createButtonList();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        if (mPlayer != null) {
+            mPlayer.stop();
+            mPlayer.release();
+        }
+    }
+
+    /**
+     * Créer la liste des boutons
+     */
+    private void createButtonList() {
         buttonSoundMap.put(R.id.buttonAllez, R.raw.allez);
         buttonSoundMap.put(R.id.buttonCaPetille, R.raw.ca_petille);
         buttonSoundMap.put(R.id.buttonComplique, R.raw.la_vie_cest_complique);
@@ -35,15 +53,6 @@ public class SoundPanelActivity extends AppCompatActivity {
         buttonSoundMap.put(R.id.buttonTg, R.raw.tg);
         buttonSoundMap.put(R.id.buttonZbob, R.raw.zbob_zbob);
         this.associateButtonsList();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        if (mPlayer != null) {
-            mPlayer.stop();
-            mPlayer.release();
-        }
     }
 
     /**
