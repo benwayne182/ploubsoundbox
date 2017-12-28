@@ -1,6 +1,7 @@
 package com.fdp.benwayne.ploubsoundbox.view;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.fdp.benwayne.ploubsoundbox.R;
 import com.fdp.benwayne.ploubsoundbox.model.User;
@@ -47,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
             startButton.setEnabled(b);
             String userName = b ? s.toString() : "";
             user.setName(userName);
+            SharedPreferences preferences = getPreferences(MODE_PRIVATE);
+            preferences.edit().putString("username", user.getName()).apply();
         }
 
         @Override
@@ -80,6 +84,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startSoundbox() {
+        String username = getPreferences(MODE_PRIVATE).getString("username", null);
+        Toast.makeText(this, this.getText(R.string.toast) + " " + username, Toast.LENGTH_SHORT).show();
         Intent gameActivity = new Intent(MainActivity.this, SoundPanelActivity.class);
         startActivity(gameActivity);
     }
